@@ -1,0 +1,285 @@
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+}
+
+.textarea-field {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.textarea-field:focus {
+  border-color: #007bff;
+}
+
+.add-remove-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.add-remove-button:hover {
+  background-color: #0056b3;
+}
+
+/* Generate button */
+.generate-button {
+  padding: 12px 24px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.generate-button:hover {
+  background-color: #218838;
+}
+
+/* Image upload section */
+.image-upload {
+  display: flex;
+  align-items: center;
+}
+
+.image-upload label {
+  margin-right: 10px;
+}
+
+.uploaded-image {
+  max-width: 200px;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Resume template styles */
+.resume-template {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.resume-template h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.resume-template p {
+  margin-bottom: 10px;
+}
+
+.resume-template ul {
+  padding-left: 20px;
+}
+
+.resume-template li {
+  list-style-type: disc;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .input-field,
+  .textarea-field {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .generate-button {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+/* Resume template styles */
+.resume-template {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.resume-template h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.resume-template p {
+  margin-bottom: 10px;
+}
+
+.resume-template ul {
+  padding-left: 20px;
+}
+
+.resume-template li {
+  list-style-type: disc;
+}
+
+/* Styling for image in the template */
+.resume-template img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 50%;
+  /* Make the image circular */
+  display: block;
+  /* Ensure the image is displayed as a block element */
+  /* margin: 0 auto; Center the image */
+}
+
+
+/* App.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-field,
+.textarea-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-field {
+  margin-bottom: 10px;
+}
+
+.add-remove-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.generate-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+}
+
+.resume-template {
+  margin-top: 30px;
+}
+
+.resume {
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal-column {
+  width: 35%;
+}
+
+.details-column {
+  width: 60%;
+}
+
+.skills-field,
+.achievements-field,
+.certificates-field {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
