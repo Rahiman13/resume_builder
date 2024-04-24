@@ -53,7 +53,7 @@ function ResumeBuilder() {
     email: '',
     phone: '',
     address: '',
-    image: ''
+    image: null // Changed to null
   });
   const [objective, setObjective] = useState('');
   const [education, setEducation] = useState([{ degree: '', institution: '', year: '' }]);
@@ -94,8 +94,8 @@ function ResumeBuilder() {
     const template = `
       <div class="resume">
         <div class="personal-column">
+        <img src="${personalInfo.image}" alt="User Image" /> <!-- Display image in template -->
           <h2>Personal Information</h2>
-          <img src="${personalInfo.image}" alt="User Image" /> <!-- Display image in template -->
           <p>Name: ${personalInfo.name}</p>
           <p>Email: ${personalInfo.email}</p>
           <p>Phone: ${personalInfo.phone}</p>
@@ -130,6 +130,12 @@ function ResumeBuilder() {
   const handleSubmit = (e) => {
     e.preventDefault();
     generateResumeTemplate();
+  };
+
+  // Function to handle image file selection
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setPersonalInfo({ ...personalInfo, image: file });
   };
 
   // Function to generate PDF
@@ -190,11 +196,9 @@ function ResumeBuilder() {
         <div className="form-group">
           <label>Image:</label>
           <input
-            type="text"
+            type="file" // Changed to file type
             className="input-field"
-            value={personalInfo.image}
-            onChange={(e) => setPersonalInfo({ ...personalInfo, image: e.target.value })}
-            placeholder="Enter Image URL"
+            onChange={handleImageChange} // Added onChange handler
           />
         </div>
         {/* Objective Section */}
@@ -355,7 +359,7 @@ function ResumeBuilder() {
       {/* Display the generated resume template */}
       {resumeTemplate && (
         <div className="resume-template" id="resume-template">
-          <h2>Resume Template</h2>
+          <h2 class="heading">SHAIK KHAJA RAHIMAN</h2>
           <div dangerouslySetInnerHTML={{ __html: resumeTemplate }}></div>
         </div>
       )}
