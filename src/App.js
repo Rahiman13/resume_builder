@@ -92,16 +92,61 @@ function ResumeBuilder() {
   // Function to generate the resume template
   const generateResumeTemplate = () => {
     const template = `
+      <style>
+        .resume {
+          font-family: Arial, sans-serif;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          overflow: hidden;
+          margin: 20px auto;
+          padding: 20px;
+          width: 800px;
+          background-color: #f9f9f9;
+        }
+        .personal-column {
+          float: left;
+          width: 40%;
+        }
+        .details-column {
+          float: right;
+          width: 55%;
+        }
+        .personal-column h2, .details-column h2 {
+          font-size: 20px;
+          margin-top: 0;
+        }
+        .personal-column p, .details-column p {
+          margin: 5px 0;
+        }
+        .personal-column img {
+          max-width: 100%;
+          border-radius: 50%;
+        }
+        .skills {
+          margin-top: 10px;
+        }
+        .skills li {
+          list-style-type: none;
+          margin-bottom: 5px;
+        }
+        .achievements li {
+          list-style-type: disc;
+          margin-left: 20px;
+        }
+        .certificates p {
+          margin: 5px 0;
+        }
+      </style>
       <div class="resume">
         <div class="personal-column">
-        <img src="${personalInfo.image}" alt="User Image" /> <!-- Display image in template -->
+          <img src="${personalInfo.image}" alt="User Image" />
           <h2>Personal Information</h2>
           <p>Name: ${personalInfo.name}</p>
           <p>Email: ${personalInfo.email}</p>
           <p>Phone: ${personalInfo.phone}</p>
           <p>Address: ${personalInfo.address}</p>
           <h2>Skills</h2>
-          <ul>
+          <ul class="skills">
             ${skills.map(skill => `<li>${skill}</li>`).join('')}
           </ul>
         </div>
@@ -110,16 +155,16 @@ function ResumeBuilder() {
           <p>${objective}</p>
           <h2>Education</h2>
           ${education.map(edu => (
-      `<p>${edu.degree} - ${edu.institution}, ${edu.year}</p>`
-    )).join('')}
+    `<p>${edu.degree} - ${edu.institution}, ${edu.year}</p>`
+  )).join('')}
           <h2>Achievements</h2>
-          <ul>
+          <ul class="achievements">
             ${achievements.map(achievement => `<li>${achievement}</li>`).join('')}
           </ul>
           <h2>Certificates</h2>
           ${certificates.map(cert => (
-      `<p>${cert.name} - ${cert.issuer}, ${cert.date}</p>`
-    )).join('')}
+    `<p>${cert.name} - ${cert.issuer}, ${cert.date}</p>`
+  )).join('')}
         </div>
       </div>
     `;
@@ -135,7 +180,11 @@ function ResumeBuilder() {
   // Function to handle image file selection
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setPersonalInfo({ ...personalInfo, image: file });
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setPersonalInfo({ ...personalInfo, image: reader.result });
+    };
+    reader.readAsDataURL(file);
   };
 
   // Function to generate PDF
