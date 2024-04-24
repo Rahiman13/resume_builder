@@ -192,7 +192,7 @@ h1 {
 
 /* Styling for image in the template */
 .resume-template img {
-  max-width: 100px;
+  max-width: 200px;
   height: auto;
   border-radius: 50%;
   /* Make the image circular */
@@ -282,4 +282,18 @@ ul {
 
 ul li {
   margin-bottom: 5px;
+}
+
+.heading {
+  text-align: center;
+  /* Center align the text */
+  font-size: 44px;
+  /* Adjust the font size */
+  margin-top: 20px;
+  /* Add some top margin for spacing */
+}
+
+
+.personal-column{
+  /* background-color: rgb(129, 125, 125); */
 }
